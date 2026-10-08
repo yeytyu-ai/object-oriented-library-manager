@@ -1,4 +1,86 @@
+#include "library_manager.h"
 #include <iostream>
+
+using namespace std;
+
+Book::Book(int id, const string& t, const string& a,
+           const string& c, int y)
+    : bookId(id),
+      title(t),
+      author(a),
+      category(c),
+      year(y),
+      available(true) {}
+
+void Book::display() const {
+    cout << "Book ID: " << bookId << endl;
+    cout << "Title: " << title << endl;
+    cout << "Author: " << author << endl;
+    cout << "Category: " << category << endl;
+    cout << "Year: " << year << endl;
+    cout << "Status: "
+         << (available ? "Available" : "Borrowed") << endl;
+    cout << "--------------------------" << endl;
+}
+
+int Book::getId() const {
+    return bookId;
+}
+
+bool Book::isAvailable() const {
+    return available;
+}
+
+void Book::borrowBook() {
+    if (available) {
+        available = false;
+        cout << "Book borrowed successfully." << endl;
+    } else {
+        cout << "Book is already borrowed." << endl;
+    }
+}
+
+void Book::returnBook() {
+    available = true;
+    cout << "Book returned successfully." << endl;
+}
+
+void Library::addBook(const Book& book) {
+    books.push_back(book);
+}
+
+void Library::displayBooks() const {
+    if (books.empty()) {
+        cout << "No books available." << endl;
+        return;
+    }
+
+    for (const Book& book : books) {
+        book.display();
+    }
+}
+
+void Library::borrowBook(int id) {
+    for (Book& book : books) {
+        if (book.getId() == id) {
+            book.borrowBook();
+            return;
+        }
+    }
+
+    cout << "Book not found." << endl;
+}
+
+void Library::returnBook(int id) {
+    for (Book& book : books) {
+        if (book.getId() == id) {
+            book.returnBook();
+            return;
+        }
+    }
+
+    cout << "Book not found." << endl;
+}#include <iostream>
 #include <vector>
 #include <string>
 using namespace std;
