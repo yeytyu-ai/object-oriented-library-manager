@@ -1,0 +1,52 @@
+# Object-Oriented Library Manager
+
+## Description
+
+A C++ Object-Oriented Library Manager for managing books,
+members, and loans.
+
+## Features
+
+- Add books
+- List books
+- Search book details
+- Borrow books
+- Return books
+- Manage members
+- Manage loans
+- Import and export library records using CSV
+- Input validation
+- Error handling
+- Automated tests
+
+## OOP Concepts
+
+- Classes and Objects
+- Encapsulation
+- Constructors
+- Private and Public members
+- Member functions
+- Standard containers
+- RAII
+
+## Project Files
+
+- `library_manager.h` - Book and Library class declarations
+- `library_manager.cpp` - Book and Library implementations
+- `storage.h` - Storage declarations
+- `storage.cpp` - CSV file handling
+- `member.h` - Member class declaration
+- `member.cpp` - Member implementation
+- `loan.h` - Loan class declaration
+- `loan.cpp` - Loan implementation
+- `main.cpp` - Main program
+- `test_library.cpp` - Automated tests
+- `library_records.csv` - Sample library records
+- `CMakeLists.txt` - Build configuration
+
+## Build
+
+Using g++:
+
+```bash
+g++ main.cpp library_manager.cpp storage.cpp member.cpp loan.cpp -o library_manager
