@@ -1,0 +1,36 @@
+# Object-Oriented Library Manager
+
+## Description
+
+A simple C++ library management system developed using
+Object-Oriented Programming concepts.
+
+## Features
+
+- Add books
+- Display book details
+- Borrow books
+- Return books
+- Check book availability
+
+## OOP Concepts Used
+
+- Classes and Objects
+- Encapsulation
+- Constructors
+- Private and Public members
+- Vectors
+- Member functions
+
+## Files
+
+- `library_manager.h` - Class declarations
+- `library_manager.cpp` - Class implementations
+- `main.cpp` - Main program
+
+## How to Run
+
+Compile the program using:
+
+```bash
+g++ main.cpp library_manager.cpp -o library_manager
